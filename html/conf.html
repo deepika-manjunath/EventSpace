@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="conf.css">
+</head>
+<body>
+    <div class="container">
+        <button class="prev-btn" onclick="goPrev()">&lt;</button>
+        <div class="slider">
+          <img src="assets\con f 1.png" class="slide">
+          <img src="assets\con f 2.png" class="slide">
+          <!-- <img src="image3.jpg" alt="Image 3"> -->
+        </div>
+        <div class="title">
+          <P>CONFERENCE HALL</P>
+        </div>
+        <button class="next-btn" onclick="goNext()">&gt;</button>
+      </div>
+
+      <div class="details">
+        <h3>DESCRIPTION</h3>
+        <p>Can accomodate 200 people , Well furnished hall with individual seats , air-conditioned and spacious dais </p>
+      </div>
+
+  <form class="f1">    
+      <div class="facility">
+        <h3>FACILITIES</h3>
+      
+        <label class="custom-checkbox">
+          <input name="dummy" type="checkbox">
+         <span class="checkmark"></span> <span class="fac">Projector</span>
+        </label>
+        <label class="custom-checkbox">
+          <input name="dummy" type="checkbox">
+         <span class="checkmark"></span> <span class="fac">Speaker connection</span>
+        </label>
+        <label class="custom-checkbox">
+          <input name="dummy" type="checkbox">
+         <span class="checkmark"></span> <span class="fac">Mic</span>
+        </label>
+        <label class="custom-checkbox">
+          <input name="dummy" type="checkbox">
+         <span class="checkmark"></span> <span class="fac">Air Condition</span>
+        </label>
+        </div>
+<div class="datetime">
+    <div class="date">
+      <h3>ENTRY</h3>
+      <input type="date" class="d" name="checkin" placeholder="dd-mm-yy">
+      <input type="time" class="t" name="intime"  placeholder="hh:mm">
+    </div>
+    <div class="date">
+      <h3>EXIT</h3>
+      <input type="date"class="d" name="checkout" placeholder="dd-mm-yy">
+      <input type="time" class="t" name="exittime"  placeholder="hh:mm">
+    </div>
+  </div>
+
+  <div id="button">
+    <input type="submit" class="button" value="RESERVE NOW" name="submit">
+       
+  </div>
+</form> 
+      <script src="conf.js"></script>
+</body>
+</html>

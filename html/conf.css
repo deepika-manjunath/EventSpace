@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+  background-color: #efeeef;
+  font-family:'Times New Roman', Times, serif;
+}
+.container{
+  width:95%;
+  height: 50vh;
+  margin: auto;
+  position: relative;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.2);
+}
+.slider{
+  width:100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.slide{
+  width: 100%;
+  height: 100%;
+  transition:1s;
+  position: absolute;
+}
+
+.title{
+  position: absolute;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  top: 60%;
+  font-size: 4em;
+  padding: 0.3em;
+  background-color: rgb(255,255,255,0.5);
+  border-radius: 10px;
+}
+.title p{
+  color: white;
+  text-shadow: 4px 4px 20px rgb(0,0,0,4);
+}
+
+  .prev-btn, .next-btn {
+    margin: 5px;
+    position: absolute;
+    top: 40%;
+    /* transform: translateY(-50%);  */
+    background-color: rgb(0,0,0,0.1);
+    padding: 2px;
+    border:transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 28px;
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .prev-btn {
+  left:0;
+  }
+  
+  .next-btn {
+    right: 0;
+  }
+  .f1{
+    width:90%;
+    background-image: linear-gradient(#f15b0e 10% ,#f37c3f 30% , white);
+    padding: 2em;
+    margin: auto;
+    margin-top: 1em;
+    box-shadow:  5px 5px 10px rgb(0,0,0,0.2);
+  }
+
+  .radio-button-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-left: 1em;
+  }
+  
+  .radio-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .radio-button__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .radio-button__label {
+    display: inline-block;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-button__custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-button__input:checked + .radio-button__label .radio-button__custom {
+    background-color: #f15b0e;
+    border-color: transparent;
+    transform: scale(0.8);
+    box-shadow: 0 0 20px #f37c3f;
+  }
+  
+  .radio-button__input:checked + .radio-button__label {
+    color: #f15b0e;
+  }
+  
+  .radio-button__label:hover .radio-button__custom {
+    transform: scale(1.2);
+    border-color: #f15b0e;
+    box-shadow: 0 0 20px #f37c3f;
+  }
+  
+  .room h3{
+    padding: 0.5em;
+    color: #f15b0e;
+    font-size: 1.5em;
+  }
+
+  .details,.facility,.room{
+    margin: auto;
+    width: 95%;
+    margin-top: 1em;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgb(0,0,0,0.2);
+  }
+
+  .details h3{
+    padding: 0.5em;
+    color: #f15b0e;
+    font-size: 1.5em;
+  }
+
+  .details p{
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
+    font-size:larger;
+  }
+ 
+  .facility h3{
+    padding: 0.5em;
+    color: #f15b0e;
+    font-size: 1.5em;
+  }
+
+  /* From Uiverse.io by KhaledMatalkah */ 
+.custom-checkbox {
+  padding: 1em;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  transform-style: preserve-3d;
+}
+
+.custom-checkbox .checkmark::before {
+  content: "\2713";
+  font-size: 16px;
+  color: transparent;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #f15b0e;
+  border-color: #f15b0e;
+  transform: scale(1.1) rotateZ(360deg) rotateY(360deg);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::before {
+  color: #fff;
+}
+
+.custom-checkbox:hover {
+  color: #666;
+}
+
+.custom-checkbox:hover .checkmark {
+  border-color: #666;
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.custom-checkbox input[type="checkbox"]:focus + .checkmark {
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.custom-checkbox .checkmark,
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  transition: background-color 1.3s, border-color 1.3s, color 1.3s, transform 0.3s;
+}
+
+.fac{
+  font-size: larger;
+}
+
+.datetime{
+  width:93%;
+  margin: auto;
+  margin-top: 1em;
+  display: flex;
+  justify-content:left;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.2) ;
+  padding: 1em;
+}
+
+.date{
+  padding-right: 4em;
+}
+
+.date h3{
+  padding: 0.5em;
+  color: #f15b0e;
+  font-size: 1.5em;
+}
+
+.d,.t{
+  padding: 1em;
+  /* border: 2px solid black;
+  border-radius: 5px; */
+  
+  border: transparent;
+  border-radius: 5px;
+  box-shadow: -2px -2px 5px rgb(0,0,0,0.3);
+  font-size: larger;
+}
+
+#button{
+  display: flex;
+  justify-content: center;
+  width: 93%;
+  padding: 1em;
+
+}
+
+.button {
+  border: 2px solid #f37c3f;
+  background-color: #f15b0e;
+  border-radius: 0.9em;
+  cursor: pointer;
+  padding:1.5em 5em 1.5em 5em;
+  transition: all ease-in-out 0.2s;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background-color: #f37c3f;
+}
+
+

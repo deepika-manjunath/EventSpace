@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="conf.css">
+</head>
+<body>
+    <div class="container">
+        <button class="prev-btn" onclick="goPrev()">&lt;</button>
+        <div class="slider">
+          <img src="assets\cl n 1.png" class="slide">
+          <img src="assets\cl n 2.png" class="slide">
+          <!-- <img src="image3.jpg" alt="Image 3"> -->
+        </div>
+        <div class="title">
+          <P>ROOMS WITH PROJECTOR</P>
+        </div>
+        <button class="next-btn" onclick="goNext()">&gt;</button>
+      </div>
+
+    </div>
+    <div class="details">
+      <h3>DESCRIPTION</h3>
+      <p>Can accomodate 50+ people , Well furnished hall with 5 seater bench and dais </p>
+    </div>
+<form class="f1">
+      <div class="room">
+        <h3>SELECT YOUR ROOM</h3>
+        <div class="radio-button-container">
+            <div class="radio-button">
+            <input type="radio" class="radio-button__input" id="radio1" name="radio-group">
+            <label class="radio-button__label" for="radio1">
+              <span class="radio-button__custom"></span>
+              N203
+            </label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" class="radio-button__input" id="radio2" name="radio-group">
+            <label class="radio-button__label" for="radio2">
+              <span class="radio-button__custom"></span>
+             003
+            </label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" class="radio-button__input" id="radio3" name="radio-group">
+            <label class="radio-button__label" for="radio3">
+              <span class="radio-button__custom"></span>
+            004
+            </label>
+          </div>
+          </div>
+     
+     </div>
+      <div class="facility">
+        <h3>FACILITIES</h3>
+      
+        <label class="custom-checkbox">
+          <input name="dummy" type="checkbox">
+         <span class="checkmark"></span> <span class="fac">Projector</span>
+        </label>
+        <label class="custom-checkbox">
+          <input name="dummy" type="checkbox">
+         <span class="checkmark"></span> <span class="fac">Speaker connection</span>
+        </label>
+        </div>
+<div class="datetime">
+    <div class="date">
+      <h3>ENTRY</h3>
+      <input type="date" class="d" name="checkin" placeholder="dd-mm-yy">
+      <input type="time" class="t" name="intime"  placeholder="hh:mm">
+    </div>
+    <div class="date">
+      <h3>EXIT</h3>
+      <input type="date"class="d" name="checkout" placeholder="dd-mm-yy">
+      <input type="time" class="t" name="exittime"  placeholder="hh:mm">
+    </div>
+  </div>
+
+  <div id="button">
+    <input type="submit" class="button" value="RESERVE NOW" name="submit">
+       
+  </div>
+</form> 
+      <script src="conf.js"></script>
+</body>
+</html>
