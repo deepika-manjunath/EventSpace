@@ -6,7 +6,9 @@ body{
     margin: 0;
     padding: 0;
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 .topbar{
     width: 90vw;
     height: 20vh;
@@ -45,15 +47,9 @@ body{
                 -5px -5px 20px rgb(0,0,0,0.2);
 }
 
-#button{
-    display: flex;
-    justify-content: center;
-    width: 93%;
-    padding: 1em;
-  
-  }
   
   .button {
+    margin:auto;
     border: 2px solid #f37c3f;
     background-color: #f37c3f;
     border-radius: 2px;

@@ -30,21 +30,21 @@
         <h3>SELECT YOUR ROOM</h3>
         <div class="radio-button-container">
             <div class="radio-button">
-            <input type="radio" class="radio-button__input" id="radio1" name="radio-group">
+            <input type="radio" class="radio-button__input" id="radio1" name="N203">
             <label class="radio-button__label" for="radio1">
               <span class="radio-button__custom"></span>
               N203
             </label>
           </div>
           <div class="radio-button">
-            <input type="radio" class="radio-button__input" id="radio2" name="radio-group">
+            <input type="radio" class="radio-button__input" id="radio2" name="003">
             <label class="radio-button__label" for="radio2">
               <span class="radio-button__custom"></span>
              003
             </label>
           </div>
           <div class="radio-button">
-            <input type="radio" class="radio-button__input" id="radio3" name="radio-group">
+            <input type="radio" class="radio-button__input" id="radio3" name="004">
             <label class="radio-button__label" for="radio3">
               <span class="radio-button__custom"></span>
             004
@@ -57,32 +57,34 @@
         <h3>FACILITIES</h3>
       
         <label class="custom-checkbox">
-          <input name="dummy" type="checkbox">
+          <input name="Projector" type="checkbox">
          <span class="checkmark"></span> <span class="fac">Projector</span>
         </label>
         <label class="custom-checkbox">
-          <input name="dummy" type="checkbox">
+          <input name="Speaker connection" type="checkbox">
          <span class="checkmark"></span> <span class="fac">Speaker connection</span>
         </label>
         </div>
 <div class="datetime">
     <div class="date">
       <h3>ENTRY</h3>
-      <input type="date" class="d" name="checkin" placeholder="dd-mm-yy">
-      <input type="time" class="t" name="intime"  placeholder="hh:mm">
+      <input type="date" id="nd" class="nd" name="checkin" placeholder="dd-mm-yy">
+      <input type="time" id="nt" class="nt" name="intime"  placeholder="hh:mm">
     </div>
     <div class="date">
       <h3>EXIT</h3>
-      <input type="date"class="d" name="checkout" placeholder="dd-mm-yy">
-      <input type="time" class="t" name="exittime"  placeholder="hh:mm">
+      <input type="date" id="xd" class="xd" name="checkout" placeholder="dd-mm-yy">
+      <input type="time" id="xt" class="xt" name="exittime"  placeholder="hh:mm">
     </div>
   </div>
 
   <div id="button">
-    <input type="submit" class="button" value="RESERVE NOW" name="submit">
+    <button type="submit" class="button">RESERVE NOW</button>
        
   </div>
-</form> 
+</form>
+
+
       <script src="conf.js"></script>
 </body>
 </html>

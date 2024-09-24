@@ -11,14 +11,14 @@
         <img src="assets\eventspace-favicon-white.png" id="logo">
         <h3>REGISTRATION DETAILS</h3>
     </div>
-    <form class="f1">
-        <div class="row">
+    <form class="f1" id="registration">
+        <!-- <div class="row">
 
             <div class="col">
                 <h4>ROOM NAME</h4>
                 <input type="text" name="room" id="room" value="">
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
 
@@ -84,14 +84,17 @@
 
             <div class="col">
                 <h4>STUDENT CONTACT NO</h4>
-                <input type="text" name="dept" id="dept" value="">
+                <input type="text" name="stuno" id="stuno" value="">
             </div>
         </div>
 
-        <div id="button">
-            <input type="submit" class="button" value="RESERVE NOW" name="submit">
+        <button type="submit" class="button"  id="button" name="submit">
+            RESERVE NOW
                
-          </div>
+        </button>
     </form>
+    <script type="module" src="conffirebase.js"></script>
+    <script src="confform.js"></script>
+
 </body>
 </html>

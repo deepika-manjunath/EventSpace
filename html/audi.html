@@ -25,41 +25,41 @@
         <p>Can accomodate 200 people , Well furnished hall with 2 floor individual seating , air-conditioned and spacious dais </p>
       </div>
 
-  <form class="f1">    
+  <form class="f1" id="f1">    
       <div class="facility">
         <h3>FACILITIES</h3>
       
         <label class="custom-checkbox">
-          <input name="dummy" type="checkbox">
+          <input name="Projector" type="checkbox">
          <span class="checkmark"></span> <span class="fac">Projector</span>
         </label>
         <label class="custom-checkbox">
-          <input name="dummy" type="checkbox">
+          <input name="Speaker connection" type="checkbox">
          <span class="checkmark"></span> <span class="fac">Speaker connection</span>
         </label>
         <label class="custom-checkbox">
-          <input name="dummy" type="checkbox">
+          <input name="Mic" type="checkbox">
          <span class="checkmark"></span> <span class="fac">Mic</span>
         </label>
         <label class="custom-checkbox">
-          <input name="dummy" type="checkbox">
+          <input name="Air Condition" type="checkbox">
          <span class="checkmark"></span> <span class="fac">Air Condition</span>
         </label>
         <label class="custom-checkbox">
-            <input name="dummy" type="checkbox">
+            <input name="Balcony Seating" type="checkbox">
            <span class="checkmark"></span> <span class="fac">Balcony Seating</span>
           </label>
         </div>
 <div class="datetime">
     <div class="date">
       <h3>ENTRY</h3>
-      <input type="date" class="d" name="checkin" placeholder="dd-mm-yy">
-      <input type="time" class="t" name="intime"  placeholder="hh:mm">
+      <input type="date" class="d" id="entryd" name="checkin" placeholder="dd-mm-yy">
+      <input type="time" class="t" id="entryt" name="intime"  placeholder="hh:mm">
     </div>
     <div class="date">
       <h3>EXIT</h3>
-      <input type="date"class="d" name="checkout" placeholder="dd-mm-yy">
-      <input type="time" class="t" name="exittime"  placeholder="hh:mm">
+      <input type="date"class="d" id="exitd" name="checkout" placeholder="dd-mm-yy">
+      <input type="time" class="t" id="exitt" name="exittime"  placeholder="hh:mm">
     </div>
   </div>
 
@@ -69,5 +69,6 @@
   </div>
 </form> 
       <script src="conf.js"></script>
+      <script type="module" src="audi.js"></script>
 </body>
 </html>
