@@ -24,6 +24,7 @@ async function submitForm(e) {
     const entrytime = getElementVal('entryt');
     const exitdate = getElementVal('exitd');
     const exittime = getElementVal('exitt');
+    const facility = getElementVal('fac')
     const departmentname = getElementVal('dept');
     const HOD = getElementVal('hod');
     const staffincharge = getElementVal('staff');
@@ -36,14 +37,15 @@ async function submitForm(e) {
     const checkIn = new Date(`${entrydate}T${entrytime}`);
     const checkOut = new Date(`${exitdate}T${exittime}`);
 
-    await saveMessages(checkIn,checkOut,departmentname, HOD, staffincharge, staffcontact, studentincharge, studentid, studentcontact);
+    await saveMessages(checkIn,checkOut,facility,departmentname, HOD, staffincharge, staffcontact, studentincharge, studentid, studentcontact);
 }
 
-const saveMessages = async (checkIn,checkOut,departmentname, HOD, staffincharge, staffcontact, studentincharge, studentid, studentcontact) => {
+const saveMessages = async (checkIn,checkOut,facility,departmentname, HOD, staffincharge, staffcontact, studentincharge, studentid, studentcontact) => {
     try {
-        await addDoc(collection(db, "auditorium"), {
+        await addDoc(collection(db, "seminarhall"), {
             checkIn:checkIn,
             checkOut:checkOut,
+            facility:facility,
             department: departmentname,
             HOD: HOD,
             Staff: staffincharge,
