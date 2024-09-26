@@ -55,6 +55,9 @@ const saveMessages = async (checkIn,checkOut,facility,departmentname, HOD, staff
             studentcontact: studentcontact,
         });
         console.log("Document successfully written!");
+        alert('Reserved sucessfully');
+        history.back();
+
     } catch (e) {
         console.error("Error adding document: ", e);
     }
