@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getFirestore, getDocs, collection, addDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, getDocs, collection,addDoc, query, where, Timestamp} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
-// Step 2: Initialize Firebase
+
 const firebaseConfig = {
     apiKey: "AIzaSyAS48lfbuczHDMHdcH8LFeA7toFPU1S3-A",
     authDomain: "eventspace-02.firebaseapp.com",
@@ -15,16 +16,33 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 // Function to fetch data based on collection name
 async function fetchData(collectionName) {
     const contentDisplay = document.getElementById("contentDisplay");
     contentDisplay.innerHTML = ""; // Clear previous content
 
+    // Get today's date and the date 7 days from now
+    const today = new Date();
+    const nextWeek = new Date();
+    nextWeek.setDate(today.getDate() + 7);
+
+    // Convert to Firestore Timestamps
+    const todayTimestamp = Timestamp.fromDate(today);
+    const nextWeekTimestamp = Timestamp.fromDate(nextWeek);
+
     try {
-        const querySnapshot = await getDocs(collection(db, collectionName));
+        // Create a query to fetch documents with checkIn date in the next 7 days
+        const q = query(
+            collection(db, collectionName),
+            where("checkIn", ">=", todayTimestamp),
+            where("checkIn", "<=", nextWeekTimestamp)
+        );
+
+        const querySnapshot = await getDocs(q);
         if (querySnapshot.empty) {
-            contentDisplay.textContent = "No content available.";
+            contentDisplay.textContent = "No bookings available for the next 7 days.";
             return;
         }
 
@@ -67,12 +85,16 @@ async function fetchData(collectionName) {
             
             // Use unique IDs to add event listeners
             document.getElementById(`accept-${docId}`).addEventListener('click', function() {
-                acceptBooking(event, studentName);
+                acceptBooking(event, studentName,checkInString,checkOutString);
                 this.disabled = true;
                 this.classList.remove('clickable');
+                document.getElementById(`reject-${docId}`).disabled = true;
             });
             document.getElementById(`reject-${docId}`).addEventListener('click', function() {
-                // alert(`Booking request rejected for ${event}`);
+                rejectBooking(event, studentName,checkInString,checkOutString);
+                this.disabled = true;
+                this.classList.remove('clickable');
+                document.getElementById(`accept-${docId}`).disabled = true;
             });
         });
     } catch (error) {
@@ -89,12 +111,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("conferenceHallButton").addEventListener("click", () => fetchData("conferencehall"));
 });
 
-async function acceptBooking(event, studentName) {
+async function acceptBooking(event, studentName,checkInString,checkOutString) {
     console.log('Accepting booking for event:', event, 'and student:', studentName); // Debugging line
     try {
         const docRef = await addDoc(collection(db, 'acceptedBookings'), {
             event: event,
             studentincharge: studentName,
+            checkIn:checkInString,
+            checkOut:checkOutString,
             status: 'accepted',
         });
         console.log('Document written with ID: ', docRef.id); // Confirm successful write
@@ -104,3 +128,37 @@ async function acceptBooking(event, studentName) {
         alert('Failed to accept booking. Please try again.');
     }
 }
+
+async function rejectBooking(event, studentName,checkInString,checkOutString) {
+    console.log('Accepting booking for event:', event, 'and student:', studentName); // Debugging line
+    try {
+        const docRef = await addDoc(collection(db, 'rejectedBookings'), {
+            event: event,
+            studentincharge: studentName,
+            checkIn:checkInString,
+            checkOut:checkOutString,
+            status: 'rejected',
+        });
+        console.log('Document written with ID: ', docRef.id); // Confirm successful write
+        alert('Booking request rejected');
+    } catch (error) {
+        console.error('Error rejecting booking: ', error);
+        alert('Failed to reject booking. Please try again.');
+    }
+}
+
+async function handleLogout() {
+    try {
+        await signOut(auth);
+        console.log("User signed out successfully.");
+        window.location.href = "login.html"; 
+    } catch (error) {
+        console.error("Error signing out: ", error);
+        alert("Error signing out. Please try again.");
+    }
+}
+
+// Event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("logout").addEventListener("click", handleLogout);
+});

@@ -7,11 +7,6 @@ body{
     background-color: #efeeef;
 }
 
-contentDisplay{
-    background-image: linear-gradient();
-}
-
-
 .topbar {
     background: linear-gradient(135deg, #f15b0e, #ff7e5f); 
     padding: 20px;
@@ -28,6 +23,17 @@ contentDisplay{
     font-size: 24px;
   }
 
+  p{
+    display: inline-block;
+    margin-left: 95%;
+    color: white;
+    padding: 5px;
+  }
+
+  p:hover{
+   border-bottom: 2px solid #fff;
+  }
+
   #logout{
     color: white;
     font-size: 16px;
@@ -38,6 +44,7 @@ contentDisplay{
     border-radius: 3px;
     margin-left: 95%;
   }
+
  .max
 {
     width: 90%;
@@ -189,126 +196,43 @@ hr {
     margin: 10px 0;
 }
 
-.accept , .reject{
-    color: white;
-    background-color: #dd916c;
-    padding: 10px;
-    margin-right: 5px;
-    margin-top: -10px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px rgb(0,0,0,0.2);
-}
+/* Media Query for devices with a max width of 768px */
+@media (max-width: 768px) {
+    .topbar{
+        padding: 10px;
 
-.reject{
-    margin-left: 85%;
-}
-
-/* .accept:hover , .reject:hover{
-    background-color: #ff7e5f;
-} */
-
-.accept:hover{
-    background-color: green;
-}
-
-.reject:hover{
-    background-color: red;
-}
-
-
-
-@media (max-width: 800px) {
-    #logo {
-        height: 60px;
-        margin-left: 45%;
     }
-    h3 {
-        font-size: 20px;
-    }
-    p {
-        margin-left: 90%;
-    }
-    .max {
-        width: 95%;
-    }
-    .fancy {
-        font-size: 12px;
-        padding: 1em 1.5em;
-    }
-    .accept , .reject{
-        margin-left: 5px;
-        margin-top: 5px ;
-    }
-}
-
-
-@media (max-width: 600px) {
-    #logo {
-        height: 60px;
-        margin-left: 45%;
-    }
-    h3 {
-        font-size: 18px;
-    }
-    p {
-        margin-left: 90%;
-    }
-    .max {
-        width: 100%;
-    }
-    .fancy {
-        font-size: 11px;
-        padding: 0.75em 1.25em;
-    }
-}
-
-
-@media (max-width: 500px) {
-    #logo {
-        height: 50px;
-        margin-left: 45%;
-    }
-    h3 {
-        font-size: 16px;
-    }
-    p {
-        margin-left: 90%;
-    }
-    .max {
-        width: 100%;
+    .min{
         padding: 5px;
     }
-    .fancy {
-        font-size: 10px;
-        padding: 0.5em 1em;
-    }
-}
-
-@media (max-width: 450px) {
     #logo {
-        height: 50px;
-        margin-left: 45%;
+        margin-left: 45%; /* Adjust logo positioning */
+        height: 60px; /* Reduce logo size */
     }
 
-    #logout{
-        font-size: 10px;
-        margin-top: -5%;
-        border-bottom: 2px solid white ;
-    }
     h3 {
         font-size: 16px;
+        padding: 0; /* Decrease heading size */
     }
-    p {
-        margin-left: 90%;
+
+    p, #logout {
+        margin-left: 0%; /* Adjust margins */
+        font-size: 14px; /* Decrease font size */
     }
+
     .max {
-        width: 100%;
-        padding: 3px;
+        width: 95%; /* Make the container wider on small screens */
+        margin-top: 10px; /* Reduce top margin */
     }
+
     .fancy {
-        font-size: 7px;
-        padding: 0.5em 1em;
+        font-size: 12px; /* Reduce button font size */
+        padding: 0.5em 1em; /* Adjust padding */
+    }
+
+    #contentDisplay {
+        padding: 5px; /* Reduce padding */
+        font-size: 12px; /* Decrease font size */
     }
 
     .fancy::before{
@@ -318,5 +242,6 @@ hr {
     .fancy:hover::before{
         width:0.5rem;
     }
-
 }
+
+
