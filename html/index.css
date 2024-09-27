@@ -8,7 +8,7 @@
 
 body{
     background-color:  #efeeef;
-    color: #333;
+    color: white;
 }
 
 .nav{
@@ -31,24 +31,21 @@ body{
 
 .navlist{
     display: flex;
-    background-color: #ffffff;
+    color: white;
 }
 .navlist a{
-    color: var(--text-colour);
+    color: white;
     font-weight: 600;
-    padding: 10px 25px;
-    font-size: var(--normal-font);
+    font-size: 16px;
     transition: all .36s ease;
 }
 .navlist a:hover{
-    border-bottom: 2px solid #f15b0e;
+    border-bottom: 4px solid #ffffff;
 }
-
 
 .centerImage{
     display:block;
-    margin-left:auto;
-    margin-right:auto;
+   margin: auto;
 }
 button{
     position: absolute;
@@ -271,3 +268,132 @@ text-decoration: none;
     filter: blur(10px);
     transform: scale(0.9, 0.9);
   }
+
+
+@media (max-width: 1000px) {
+
+    ul{
+        padding:3px;
+    }
+
+   li{
+    margin: 0;
+    padding: 0;
+   }
+
+    .navlist a{
+        font-size: 20px;
+        padding: 0;
+        margin-left: 35%;
+    }
+
+    .logo{
+        font-size: 20px;
+    }
+
+    .a {
+        height: 300px; /* Adjust height for smaller screens */
+        padding: 10px; /* Less padding */
+    }
+
+    .search-box {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px auto; /* Center the search box */
+    }
+
+
+    .para {
+        font-size: 20px; /* Smaller paragraph font */
+        margin-bottom: 30px;
+    }
+
+    .s {
+        flex-direction: column; /* Stack items in the section */
+        padding-top: 20px; /* Adjust padding */
+    }
+
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .cards .card {
+        width: 500px; /* Make cards full width on small screens */
+    }
+
+
+.start{
+    margin-left: 0;
+}
+
+}
+
+@media (max-width: 600px) {
+
+    ul{
+        padding:3px;
+    }
+
+   li{
+    margin: 0;
+    padding: 0;
+   }
+
+    .navlist a{
+        font-size: 12px;
+        padding: 0;
+        margin-left: 35%;
+    }
+
+    .logo{
+        font-size: 12px;
+    }
+
+    .a {
+        height: 300px; /* Adjust height for smaller screens */
+        padding: 10px; /* Less padding */
+    }
+
+    .search-box {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px auto; /* Center the search box */
+    }
+
+    .row {
+        flex-direction: column; /* Stack items vertically */
+        width: auto; /* Allow full width */
+    }
+
+    button {
+        margin-right: 20px; /* Adjust margin for button */
+        width: 40px; /* Smaller button */
+        height: 40px; /* Smaller button */
+    }
+
+    .title {
+        font-size: 10px; /* Smaller title font */
+    }
+
+    .para {
+        font-size: 9px; /* Smaller paragraph font */
+    }
+
+    .s {
+        flex-direction: column; /* Stack items in the section */
+        padding-top: 20px; /* Adjust padding */
+    }
+
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .cards .card {
+        width: 250px; /* Make cards full width on small screens */
+    }
+
+.start{
+    margin-left: 0;
+}
+
+}

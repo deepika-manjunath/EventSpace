@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, getDocs, collection, addDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 // Step 2: Initialize Firebase
 const firebaseConfig = {
@@ -30,10 +30,12 @@ async function fetchData(collectionName) {
 
         querySnapshot.forEach(doc => {
             const data = doc.data();
+            const docId = doc.id; // Get the document ID
 
             // Convert Firestore timestamps to JavaScript Date objects
             const checkIn = data.checkIn ? data.checkIn.toDate() : null;
             const checkOut = data.checkOut ? data.checkOut.toDate() : null;
+            const event = data.event || "N/A";
             const departmentName = data.department || "N/A";
             const studentId = data.studentid || "N/A";
             const studentName = data.studentincharge || "N/A";
@@ -50,21 +52,35 @@ async function fetchData(collectionName) {
 
             const div = document.createElement("div");
             div.innerHTML = `
-                <strong>Department Name : </strong> ${departmentName} <br>
-                <strong>Check In : </strong> ${checkInString} <br>
-                <strong>Check Out : </strong> ${checkOutString} <br>
-                <strong>Student ID : </strong> ${studentId} <br>
-                <strong>Student Name : </strong> ${studentName} <br>
-                <strong>Student Contact : </strong> ${studentContact} <br>
+                <strong>Department Name: </strong> ${departmentName} <br>
+                <strong>Event Details: </strong> ${event} <br>
+                <strong>Check In: </strong> ${checkInString} <br>
+                <strong>Check Out: </strong> ${checkOutString} <br>
+                <strong>Student ID: </strong> ${studentId} <br>
+                <strong>Student Name: </strong> ${studentName} <br>
+                <strong>Student Contact: </strong> ${studentContact} <br>
+                <button id="reject-${docId}" class="reject">Reject</button>
+                <button id="accept-${docId}" class="accept">Accept</button>
                 <hr>
             `;
             contentDisplay.appendChild(div);
+            
+            // Use unique IDs to add event listeners
+            document.getElementById(`accept-${docId}`).addEventListener('click', function() {
+                acceptBooking(event, studentName);
+                this.disabled = true;
+                this.classList.remove('clickable');
+            });
+            document.getElementById(`reject-${docId}`).addEventListener('click', function() {
+                // alert(`Booking request rejected for ${event}`);
+            });
         });
     } catch (error) {
         console.error("Error fetching data: ", error);
         contentDisplay.textContent = "Error loading content.";
     }
 }
+
 // Event listeners for buttons
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("auditoriumButton").addEventListener("click", () => fetchData("auditorium"));
@@ -72,3 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("galleriaButton").addEventListener("click", () => fetchData("galleria"));
     document.getElementById("conferenceHallButton").addEventListener("click", () => fetchData("conferencehall"));
 });
+
+async function acceptBooking(event, studentName) {
+    console.log('Accepting booking for event:', event, 'and student:', studentName); // Debugging line
+    try {
+        const docRef = await addDoc(collection(db, 'acceptedBookings'), {
+            event: event,
+            studentincharge: studentName,
+            status: 'accepted',
+        });
+        console.log('Document written with ID: ', docRef.id); // Confirm successful write
+        alert('Booking request accepted');
+    } catch (error) {
+        console.error('Error accepting booking: ', error);
+        alert('Failed to accept booking. Please try again.');
+    }
+}

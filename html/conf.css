@@ -249,6 +249,7 @@ body {
         font-size: 1.3em;
     }
 
+
     .fac {
         font-size: 1.2em;
     }
@@ -268,12 +269,19 @@ body {
         font-size: 1.2em;
     }
 
+    
+    .facility{
+        flex-direction: column;
+        width: 520px;
+    }
+
     .fac {
         font-size: 1em;
     }
 
     .datetime {
         flex-direction: column;
+        width: 500px;
     }
 
     .date {
@@ -286,3 +294,85 @@ body {
         font-size: 18px;
     }
 }
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2.5em;
+    }
+
+    .f1 {
+        padding: 1em;
+    }
+
+    .details h3,
+    .facility h3 {
+        font-size: 1.2em;
+    }
+
+    
+    .facility{
+        flex-direction: column;
+        width: 350px;
+    }
+
+    .fac {
+        font-size: 1em;
+    }
+
+    .datetime {
+        flex-direction: column;
+        width: 320px;
+    }
+
+    .date {
+        padding-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .button {
+        padding: 1em 3em;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .title {
+        font-size: 2.5em;
+        margin: auto;
+    }
+
+    .f1 {
+        padding: 1em;
+    }
+
+    .details h3,
+    .facility h3 {
+        font-size: 1.2em;
+    }
+
+    
+    .facility{
+        flex-direction: column;
+        width: 250px;
+    }
+
+    .fac {
+        font-size: 1em;
+    }
+
+    .datetime {
+        flex-direction: column;
+        width: 220px;
+    }
+
+    .date {
+        padding-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .button {
+        padding: 1em 3em;
+        font-size: 18px;
+    }
+}
+

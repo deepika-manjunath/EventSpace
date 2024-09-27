@@ -190,13 +190,124 @@ hr {
     margin: 10px 0;
 }
 
+.accept , .reject{
+    color: white;
+    background-color: #f15b0e;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: -10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.2);
+}
 
-/* @media (max-width: 600px) {
-    .info-container {
-        padding: 10px; 
+.reject{
+    margin-left: 85%;
+}
+
+.accept:hover , .reject:hover{
+    background-color: #ff7e5f;
+}
+
+.accept:disabled , .reject:disabled{
+    background-color: #ff7e5f;
+}
+
+@media (max-width: 800px) {
+    #logo {
+        height: 60px;
+        margin-left: 45%;
     }
-    
-    .info-container strong {
-        font-size: 14px; 
+    h3 {
+        font-size: 20px;
     }
-} */
+    p {
+        margin-left: 90%;
+    }
+    .max {
+        width: 95%;
+    }
+    .fancy {
+        font-size: 12px;
+        padding: 1em 1.5em;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #logo {
+        height: 60px;
+        margin-left: 45%;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    p {
+        margin-left: 90%;
+    }
+    .max {
+        width: 100%;
+    }
+    .fancy {
+        font-size: 11px;
+        padding: 0.75em 1.25em;
+    }
+}
+
+
+@media (max-width: 500px) {
+    #logo {
+        height: 50px;
+        margin-left: 45%;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    p {
+        margin-left: 90%;
+    }
+    .max {
+        width: 100%;
+        padding: 5px;
+    }
+    .fancy {
+        font-size: 10px;
+        padding: 0.5em 1em;
+    }
+}
+
+@media (max-width: 450px) {
+    #logo {
+        height: 50px;
+        margin-left: 45%;
+    }
+
+    #logout{
+        font-size: 10px;
+        margin-top: -5%;
+        border-bottom: 2px solid white ;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    p {
+        margin-left: 90%;
+    }
+    .max {
+        width: 100%;
+        padding: 3px;
+    }
+    .fancy {
+        font-size: 7px;
+        padding: 0.5em 1em;
+    }
+
+    .fancy::before{
+        width: 0.5rem;
+    }
+
+    .fancy:hover::before{
+        width:0.5rem;
+    }
+
+}
