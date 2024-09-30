@@ -57,7 +57,7 @@ const saveMessages = async (checkIn,checkOut,facility,event,departmentname, HOD,
             studentcontact: studentcontact,
         });
         console.log("Document successfully written!");
-        alert('Reserved sucessfully');
+        alert('Request sent , Wait for confirmation');
         history.back();
 
     } catch (e) {
