@@ -375,4 +375,7 @@ body {
         font-size: 18px;
     }
 }
+html::-webkit-scrollbar{
+    display:none;
+}
 

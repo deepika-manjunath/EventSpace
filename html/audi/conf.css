@@ -1,3 +1,6 @@
+html::-webkit-scrollbar{
+    display:none;
+}
 * {
     margin: 0;
     padding: 0;
@@ -228,6 +231,8 @@ body {
 .button:hover {
     background-color: #f37c3f;
 }
+
+
 
 /* Media Queries */
 @media (max-width: 1200px) {

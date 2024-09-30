@@ -23,6 +23,9 @@ body {
     position: relative;
     overflow: hidden;
 }
+html::-webkit-scrollbar{
+    display:none;
+}
 
 .slide {
     width: 100%;

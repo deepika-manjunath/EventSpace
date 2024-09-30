@@ -1,8 +1,13 @@
+html::-webkit-scrollbar{
+    display:none;
+}
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+
 }
 
 
@@ -268,6 +273,17 @@ text-decoration: none;
     filter: blur(10px);
     transform: scale(0.9, 0.9);
   }
+
+.foot{
+    background-color:#524949;
+    color:white;
+    padding: 20px;
+
+}
+.foot h3{
+    color:#f15b0e;
+    text-shadow: 2px 2px 10px rgb(0,0,0,0.2);
+}
 
 
 @media (max-width: 1000px) {

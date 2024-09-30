@@ -1,4 +1,6 @@
-/* Basic Reset */
+html::-webkit-scrollbar{
+  display:none;
+}
 * {
   box-sizing: border-box;
   margin: 0;
